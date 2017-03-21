@@ -21,6 +21,7 @@ public class ChickenAndRabbit {
         	if(intChickens*2+intRabbits*4==94)
         	{
         		System.out.print("鸡有"+intChickens+"只，兔子有"+intRabbits+"只");
+        		break;//找到答案之后，跳出循环for，程序结束
         	}
         }
 	}
