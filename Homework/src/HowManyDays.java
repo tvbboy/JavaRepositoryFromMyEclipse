@@ -1,6 +1,6 @@
 
 import java.util.Scanner;
-
+//某年某月某一天
 public class HowManyDays{
 	
 	public static void main(String[] args){
