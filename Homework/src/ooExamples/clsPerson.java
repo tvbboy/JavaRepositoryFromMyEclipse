@@ -5,44 +5,60 @@ import java.util.*;
 /*
  * 这是描述人类的一个Class
  */
-public class clsPerson {
+public class clsPerson  {
 	/*
 	 * 下面是人类的属性
 	 * 
 	 */
 	private String strGender;//性别
-	private String strName; //姓名
 	private int  intAge ; //年龄
 	private double fltWeight;//体重（单位斤）
 	private double fltHeight;//身高（单位cm）
 	private String strSkin;//肤色
 	private Date dteBirthdate;//出生日期
 	private boolean isDead;//是否死亡
-	
+	private boolean isHealth;//健康状况
 	/*
 	 * 下面是人类的方法
 	 * 
 	 */
 	//该方法是人出生，参数是出生的年月，性别，肤色，体重，身高
-	public void Born(String par1,String par2,String par3,double par4,double par5) throws ParseException
+	//和类名相同的方法叫构造方法，初始化一个对象实例的时候会首先执行这个构造方法
+	 clsPerson(String par1,String par2,String par3,double par4,double par5) throws ParseException
 	{
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");  
 		dteBirthdate = sdf.parse(par1); //把字符串类型的日期转为日期类型
+		Date dt=new Date();//当前日期
 		strSkin=par3;//决定肤色
 		strGender=par2;//决定性别
-		intAge=0;//决定年龄
+		intAge= dt.getYear()-dteBirthdate.getYear();;//决定年龄
 		fltWeight=par4;//决定体重
 		fltHeight=par5;//决定身高
 		isDead=false;//决定没有死亡
+		isHealth=true;//决定是否健康
 	}
-	private void Eat()
+	public void Eat(String food)
 	{
 		if(!chkDeath())
 		{
+			if(food.equals("饭"))
+			{
 			 fltWeight+=0.1;
 			 fltHeight+=0.1;
+			}
+			else if(food.equals("面"))
+			{
+				fltWeight+=0.2;
+				 fltHeight+=0.2;
+			}
+			else
+			{
+				System.out.print("我吃了不该吃的东西！！！！！");
+				isHealth=false;
+			}	
 		}
 	}
+	
 	//参数为睡觉的时间单位（小时）
 	private void Sleep(int par1) 
 	{
@@ -51,6 +67,7 @@ public class clsPerson {
 			if(par1>10)
 			{
 				System.out.print("人正常的睡眠时间最好不要超过10小时");
+				isHealth=false;
 			}
 			else
 			{
@@ -62,12 +79,14 @@ public class clsPerson {
 	//参数为成长的时间(单位年)
 	private void Grow(int par1)
 	{
-		chkDeath();
-		intAge+=par1;
+		if(!chkDeath())
+			intAge+=par1;
 	}
-	public void Death()
+	//被final修饰的方法，只能被子类调用，不能被重写，修改
+	public final void Death()
 	{
 		isDead=true;
+		isHealth=false;
 		
 	}
 	//检验一个人是否死亡
@@ -90,6 +109,8 @@ public class clsPerson {
 		System.out.println("年龄:"+intAge);
 		System.out.println("出生日期:"+dteBirthdate);
 		System.out.println("是否活着:"+!isDead);
+		System.out.println("是否健康:"+isHealth);
+		System.out.println("<<<<<<<<<<以上为个人信息>>>>>>>>>>>>>");
 	}
 }
 
