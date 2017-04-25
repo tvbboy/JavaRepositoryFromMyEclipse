@@ -5,7 +5,7 @@ import java.util.*;
 /*
  * 这是描述人类的一个Class 2017-4-25
  */
-public class clsPerson  {
+public class clsPerson   {
 	/*
 	 * 下面是人类的属性
 	 * 
