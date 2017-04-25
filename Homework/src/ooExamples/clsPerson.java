@@ -3,7 +3,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 /*
- * 这是描述人类的一个Class
+ * 这是描述人类的一个Class 2017-4-25
  */
 public class clsPerson  {
 	/*
