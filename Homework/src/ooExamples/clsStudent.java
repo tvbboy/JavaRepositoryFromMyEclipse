@@ -30,6 +30,7 @@ public class clsStudent extends clsPerson {
      //新建了一个方法考试
      public void Exam()
      {
+    	 //随机数
     	 score = (float)(Math.random()*100); 
      }
     
