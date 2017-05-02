@@ -12,13 +12,13 @@ public class clsPerson   {
 	 */
 	private String strGender;//性别
 	private int  intAge ; //年龄
-	private double fltWeight;//体重（单位斤）
-	private double fltHeight;//身高（单位cm）
+	public double fltWeight;//体重（单位斤）
+	public double fltHeight;//身高（单位cm）
 	private String strSkin;//肤色
 	private Date dteBirthdate;//出生日期
 	private boolean isDead;//是否死亡
-	private boolean isHealth;//健康状况
-	Ieatable ieatable;//定义了吃的接口
+	public boolean isHealth;//健康状况
+	Ieatable ieatable;//定义了吃的行为接口
 	
 	/*
 	 * 下面是人类的方法
@@ -43,29 +43,15 @@ public class clsPerson   {
 	 {
 		 ieatable.eat();
 	 }
-	 /*
-	public void Eat(String food)
+	 public void Eat(String food)
+	 {
+		 ieatable.eat(this,food);
+	 }
+	 //通过该方法，可以动态为对象添加行为，比如，有一天某个学生变成机器人了......
+	public void setEatable(Ieatable ieatable)
 	{
-		if(!chkDeath())
-		{
-			if(food.equals("饭"))
-			{
-			 fltWeight+=0.1;
-			 fltHeight+=0.1;
-			}
-			else if(food.equals("面"))
-			{
-				fltWeight+=0.2;
-				 fltHeight+=0.2;
-			}
-			else
-			{
-				System.out.print("我吃了不该吃的东西！！！！！");
-				isHealth=false;
-			}	
-		}
+		this.ieatable=ieatable;
 	}
-	
 	//参数为睡觉的时间单位（小时）
 	private void Sleep(int par1) 
 	{
@@ -83,7 +69,7 @@ public class clsPerson   {
 			}
 		}
 	}
-	*/
+	
 	//参数为成长的时间(单位年)
 	private void Grow(int par1)
 	{
@@ -98,7 +84,7 @@ public class clsPerson   {
 		
 	}
 	//检验一个人是否死亡
-	private boolean chkDeath()
+	public boolean chkDeath()
 	{
 		if(isDead)
 		{
