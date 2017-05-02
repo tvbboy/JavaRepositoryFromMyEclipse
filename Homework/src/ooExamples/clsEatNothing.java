@@ -6,4 +6,10 @@ public class clsEatNothing implements Ieatable {
 		// TODO Auto-generated method stub
 		System.out.print("我是不能吃饭的");
 	}
+
+	@Override
+	public void eat(clsPerson clp, String food) {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -17,8 +17,8 @@ public class testPerson {
       micky.Display();
     //  micky.Eat("sss");
       micky.Display();
-     dock.Eat();
-   //   dock.Eat("面");
+ 
+      dock.Eat("面");
       dock.Exam();//mick是不可以调用这个方法的
       dock.Death();
       dock.Display();
