@@ -1,18 +1,18 @@
 package ooExamples;
 
 public class clsEatEnergy implements Ieatable{
-
+    private clsRobert _clsrobert;
 	@Override
-	public void eat() {
+	public void eat(clsPerson clp) {
 		// TODO Auto-generated method stub
-		System.out.print("我正在吃能量块");
-	}
-
-	@Override
-	public void eat(clsPerson clp, String food) {
-		// TODO Auto-generated method stub
+		_clsrobert=(clsRobert)clp;
+		if(_clsrobert.lvl<100.0f)
+			_clsrobert.lvl+=10.0f;
+		else
+			System.out.print("我吃饱了");
 		
 	}
+
 	
 	
 }

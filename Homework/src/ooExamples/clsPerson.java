@@ -41,12 +41,9 @@ public class clsPerson   {
 	}
 	 public void Eat()
 	 {
-		 ieatable.eat();
+		 ieatable.eat(this);
 	 }
-	 public void Eat(String food)
-	 {
-		 ieatable.eat(this,food);
-	 }
+	 
 	 //通过该方法，可以动态为对象添加行为，比如，有一天某个学生变成机器人了......
 	public void setEatable(Ieatable ieatable)
 	{

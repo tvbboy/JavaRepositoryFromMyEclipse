@@ -2,14 +2,8 @@ package ooExamples;
 //该类负责普通吃饭的逻辑封装
 public class clsEatNormal implements Ieatable {
 
-	@Override
-	public void eat() {
-		// TODO Auto-generated method stub
-		System.out.print("我在进行正常的吃饭");
-		
-		
-	}
-	public void eat(clsPerson clp,String food) {
+	private String food;
+	public void eat(clsPerson clp) {
 		// TODO Auto-generated method stub
 		System.out.print("我在进行正常的吃饭");
 		if(!clp.chkDeath())
@@ -31,5 +25,9 @@ public class clsEatNormal implements Ieatable {
 			}	
 		}
 		
+	}
+	public void setFood(String _food)
+	{
+		this.food=_food;
 	}
 }
