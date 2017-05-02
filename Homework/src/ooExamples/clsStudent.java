@@ -16,6 +16,7 @@ public class clsStudent extends clsPerson implements IPerson {
     	 studentName=_name;
     	 score=0;
     	 exp=0;
+    	 ieatable=new clsEatNormal();//定义了学生是正常的吃饭状态
      }
      //因为需求变更了，增加了两个属性，又不想费力再写一遍身高体重的输出，就对
      //父类的Display进行了改写（名字和父类一致），此时改写的目的，是实现对象显示信息

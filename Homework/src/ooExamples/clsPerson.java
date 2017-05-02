@@ -18,6 +18,8 @@ public class clsPerson   {
 	private Date dteBirthdate;//出生日期
 	private boolean isDead;//是否死亡
 	private boolean isHealth;//健康状况
+	Ieatable ieatable;//定义了吃的接口
+	
 	/*
 	 * 下面是人类的方法
 	 * 
@@ -37,6 +39,11 @@ public class clsPerson   {
 		isDead=false;//决定没有死亡
 		isHealth=true;//决定是否健康
 	}
+	 public void Eat()
+	 {
+		 ieatable.eat();
+	 }
+	 /*
 	public void Eat(String food)
 	{
 		if(!chkDeath())
@@ -76,6 +83,7 @@ public class clsPerson   {
 			}
 		}
 	}
+	*/
 	//参数为成长的时间(单位年)
 	private void Grow(int par1)
 	{
