@@ -3,7 +3,7 @@ package StrExamples;
  * 修改后的凯撒加密可以实现在ASCii范围内实现全字符加密
  */
 public class CaesarVer1 {
-
+ 
 	String str; //目标字符串
 	int key; //移动的位数，可以为负数
 	CaesarVer1(String _str,int _key)
