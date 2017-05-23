@@ -20,13 +20,13 @@ public class CaesarVer1 {
 		for(int i=0;i<str.length();i++)
 		{
 			char c=str.charAt(i);
-			if(c>=0 && c<=119)
+			if(c>=0 && c<=127)
 			{
-				c+=key % 120;
+				c+=key % 128;
 				if(c<0)
-					c+=120;
-				if(c>119)
-					c-=120;
+					c+=128;
+				if(c>127)
+					c-=128;
 			}
 			
 			result+=c;
